@@ -1,0 +1,15 @@
+<Libros xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespacesSchemaLocation="LibrosEsquema.xsd">
+    <Libro publicado ="1838">
+        <Titulo>Oliver Twist</Titulo>
+        <Autor>Charles Dickens</Autor>
+    </Libro>
+    <Libro publicado ="2005">
+        <Titulo>El mar</Titulo>
+        <Autor>John Banville</Autor>
+    </Libro>
+    <Libro publicado ="1946">
+        <Titulo>El Principito</Titulo>
+        <Autor>Antoine de Saint-Exupéry</Autor>
+    </Libro>
+</Libros>

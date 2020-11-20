@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/Users/rocio/OneDrive/Documentos/NetBeansProjects/AccesoADatos-DOM-SAX-JAXB/LibrosEsquema.xsd" uri="xml-resources/jaxb/javalibros_binding/LibrosEsquema.xsd.xml"/>
+</catalog>
