@@ -404,7 +404,7 @@ public class Formulario extends javax.swing.JFrame {
     String salida;
         try {
             salida = gesSAX.reccorrerSAX();
-              this.mensajero.setText(salida);
+              this.TextAreaDOM.setText(salida);
         } catch (SAXException ex) {
             Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex);
         }

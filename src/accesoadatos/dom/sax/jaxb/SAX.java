@@ -26,17 +26,18 @@ public class SAX {
     //este obj es el q recorre el fichero para mostrar el contenido
     SAXParser parser;
     ManejadorSAX sh;
-    ManejadorSAX miSAX = new ManejadorSAX();
     File ficheroXML;
 
     public int abrirXMLSAX(File fichero) {
         try {
+           
             SAXParserFactory factory = SAXParserFactory.newInstance();
             //esto interpretara el XML
             parser = factory.newSAXParser();
 
             //se crea una instncia del manejador que recorrerá el XML secuencialmente
             sh = new ManejadorSAX();
+             ficheroXML = fichero;
 
             return 0;
 
@@ -49,13 +50,13 @@ public class SAX {
     String reccorrerSAX() throws SAXException {
        
         try {
-            sh.cadena_resultado=""+sh.getCadena_resultado();
+            sh.cadena_resultado="";
             parser.parse(ficheroXML, sh);
                  return sh.cadena_resultado;
         } catch (IOException ex) {
-           return "error al pasear con SAX";
+           return "error al parsear con SAX";
         }
-   
+  
     }
        
     
@@ -66,14 +67,6 @@ public class SAX {
 class ManejadorSAX extends DefaultHandler {
     
     String cadena_resultado="";
-
-        public String getCadena_resultado() {
-            return cadena_resultado;
-        }
-
-        public void setCadena_resultado(String cadena_resultado) {
-            this.cadena_resultado = cadena_resultado;
-        }
 
     @Override
     public void characters(char[] ch, int start, int lenght) throws SAXException {
