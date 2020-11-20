@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
-import org.xml.sax.SAXException;
 
 
 
@@ -405,7 +404,7 @@ public class Formulario extends javax.swing.JFrame {
         try {
             salida = gesSAX.reccorrerSAX();
               this.TextAreaDOM.setText(salida);
-        } catch (SAXException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex);
         }
   

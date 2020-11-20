@@ -7,9 +7,6 @@ package accesoadatos.dom.sax.jaxb;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.xml.namespace.QName;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.Attributes;
@@ -56,14 +53,8 @@ public class SAX {
         } catch (IOException ex) {
            return "error al parsear con SAX";
         }
-  
     }
-       
-    
-       
-
-
-
+}
 class ManejadorSAX extends DefaultHandler {
     
     String cadena_resultado="";
@@ -96,5 +87,4 @@ class ManejadorSAX extends DefaultHandler {
         }
     }
     }
-}
 

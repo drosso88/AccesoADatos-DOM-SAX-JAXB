@@ -12,5 +12,4 @@ xsi:noNamespacesSchemaLocation="LibrosEsquema.xsd">
         <Titulo>El principito</Titulo>
         <Autor>Antoine de Saint-Exupéry</Autor>
     </Libro>
-<Libros>
-
+</Libros>
