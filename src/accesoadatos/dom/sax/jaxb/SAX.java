@@ -26,6 +26,7 @@ public class SAX {
     //este obj es el q recorre el fichero para mostrar el contenido
     SAXParser parser;
     ManejadorSAX sh;
+    ManejadorSAX miSAX = new ManejadorSAX();
     File ficheroXML;
 
     public int abrirXMLSAX(File fichero) {
@@ -48,7 +49,7 @@ public class SAX {
     String reccorrerSAX() throws SAXException {
        
         try {
-            sh.cadena_resultado="";
+            sh.cadena_resultado=""+sh.getCadena_resultado();
             parser.parse(ficheroXML, sh);
                  return sh.cadena_resultado;
         } catch (IOException ex) {
@@ -65,6 +66,14 @@ public class SAX {
 class ManejadorSAX extends DefaultHandler {
     
     String cadena_resultado="";
+
+        public String getCadena_resultado() {
+            return cadena_resultado;
+        }
+
+        public void setCadena_resultado(String cadena_resultado) {
+            this.cadena_resultado = cadena_resultado;
+        }
 
     @Override
     public void characters(char[] ch, int start, int lenght) throws SAXException {
@@ -93,6 +102,6 @@ class ManejadorSAX extends DefaultHandler {
             cadena_resultado = cadena_resultado + "El autor es: ".trim();
         }
     }
-}
+    }
 }
 
