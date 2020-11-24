@@ -23,6 +23,7 @@ public class Formulario extends javax.swing.JFrame {
 //gestor del DOM
     DOM gesDOM = new DOM();
     SAX gesSAX = new SAX();
+    JAXB gesJAXB = new JAXB();
    
      /**
      * Creates new form Formulario
@@ -58,10 +59,12 @@ public class Formulario extends javax.swing.JFrame {
         textPublicacion = new java.awt.TextField();
         textNuevo = new java.awt.TextField();
         btnMostrarSAX = new javax.swing.JButton();
+        btnMostrarJAXB = new javax.swing.JButton();
         ficherosXML = new javax.swing.JMenuBar();
         abrir = new javax.swing.JMenu();
         jMenuItemDOM = new javax.swing.JMenuItem();
         jMenuItemSAX = new javax.swing.JMenuItem();
+        jMenuItemJAXB = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -153,6 +156,14 @@ public class Formulario extends javax.swing.JFrame {
             }
         });
 
+        btnMostrarJAXB.setText(" Mostrar JAXB");
+        btnMostrarJAXB.setEnabled(false);
+        btnMostrarJAXB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarJAXBActionPerformed(evt);
+            }
+        });
+
         abrir.setText("Ficheros XML");
 
         jMenuItemDOM.setText("Abrir DOM");
@@ -170,6 +181,14 @@ public class Formulario extends javax.swing.JFrame {
             }
         });
         abrir.add(jMenuItemSAX);
+
+        jMenuItemJAXB.setText("Abrir JAXB");
+        jMenuItemJAXB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemJAXBActionPerformed(evt);
+            }
+        });
+        abrir.add(jMenuItemJAXB);
 
         ficherosXML.add(abrir);
 
@@ -190,7 +209,9 @@ public class Formulario extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(btnMostrarDOM, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(49, 49, 49)
-                                .addComponent(btnMostrarSAX, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnMostrarSAX, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(64, 64, 64)
+                                .addComponent(btnMostrarJAXB, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -201,6 +222,8 @@ public class Formulario extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(textPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(97, 97, 97)
                                         .addComponent(btnAnadir, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -235,11 +258,6 @@ public class Formulario extends javax.swing.JFrame {
                     .addContainerGap(612, Short.MAX_VALUE)
                     .addComponent(textTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(55, 55, 55)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(644, Short.MAX_VALUE)
-                    .addComponent(textPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(254, 254, 254)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,7 +265,8 @@ public class Formulario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMostrarSAX, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMostrarDOM, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnMostrarDOM, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMostrarJAXB, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(mensajero, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,9 +278,11 @@ public class Formulario extends javax.swing.JFrame {
                             .addComponent(textAutor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnAnadir, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnAnadir, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(10, 10, 10)
                         .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43)
@@ -284,11 +305,6 @@ public class Formulario extends javax.swing.JFrame {
                     .addGap(89, 89, 89)
                     .addComponent(textTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(405, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(187, 187, 187)
-                    .addComponent(textPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(310, Short.MAX_VALUE)))
         );
 
         pack();
@@ -309,12 +325,14 @@ public class Formulario extends javax.swing.JFrame {
                 this.btnAnadir.setEnabled(false);
                 this.btnGuardar.setEnabled(false);
                 this.btnMostrarSAX.setEnabled(false);
+                this.btnMostrarJAXB.setEnabled(false);
             } else {
                 this.mensajero.setText("DOM creado");
                 this.btnMostrarDOM.setEnabled(true);
                 this.btnAnadir.setEnabled(true);
                 this.btnGuardar.setEnabled(true);
                 this.btnMostrarSAX.setEnabled(false);
+                this.btnMostrarJAXB.setEnabled(false);
             }
         }
     }//GEN-LAST:event_jMenuItemDOMActionPerformed
@@ -424,15 +442,49 @@ public class Formulario extends javax.swing.JFrame {
                 this.btnAnadir.setEnabled(false);
                 this.btnGuardar.setEnabled(false);
                 this.btnMostrarSAX.setEnabled(false);
+                this.btnMostrarJAXB.setEnabled(false);
             } else {
                 this.mensajero.setText("SAX creado");
                 this.btnMostrarDOM.setEnabled(true);
                 this.btnAnadir.setEnabled(true);
                 this.btnGuardar.setEnabled(true);
                 this.btnMostrarSAX.setEnabled(true);
+                this.btnMostrarJAXB.setEnabled(false);
             }
         }
     }//GEN-LAST:event_jMenuItemSAXActionPerformed
+
+    private void btnMostrarJAXBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarJAXBActionPerformed
+        String salida = gesJAXB.recorrerJAXB();
+        this.TextAreaDOM.setText(salida);
+    }//GEN-LAST:event_btnMostrarJAXBActionPerformed
+
+    private void jMenuItemJAXBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemJAXBActionPerformed
+         File ficheroXML;
+        ficheroXML = seleccionaFichero();
+
+        if (ficheroXML == null) {
+            this.mensajero.setText("Error al abrir el fichero");
+        } else {
+            //devuelve 0 si todo ha ido bien
+            if (gesJAXB.abrirXML_JAXB(ficheroXML) == -1) {
+                this.mensajero.setText("Error al crear el JAXB");
+                this.btnMostrarDOM.setEnabled(false);
+                this.btnAnadir.setEnabled(false);
+                this.btnGuardar.setEnabled(false);
+                this.btnMostrarSAX.setEnabled(false);
+                this.btnMostrarJAXB.setEnabled(false);
+            } else {
+                this.mensajero.setText("JAXB creado");
+                this.btnMostrarDOM.setEnabled(false);
+                this.btnAnadir.setEnabled(false);
+                this.btnGuardar.setEnabled(false);
+                this.btnMostrarSAX.setEnabled(false);
+                 this.btnMostrarJAXB.setEnabled(true);
+                
+            }
+        }
+    }//GEN-LAST:event_jMenuItemJAXBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -476,6 +528,7 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnMostrarDOM;
+    private javax.swing.JButton btnMostrarJAXB;
     private javax.swing.JButton btnMostrarSAX;
     private javax.swing.JMenuBar ficherosXML;
     private javax.swing.JLabel jLabel1;
@@ -483,6 +536,7 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JMenuItem jMenuItemDOM;
+    private javax.swing.JMenuItem jMenuItemJAXB;
     private javax.swing.JMenuItem jMenuItemSAX;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel mensajero;

@@ -25,6 +25,14 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemSAXActionPerformed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemJAXB">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Abrir JAXB"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemJAXBActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
       </SubComponents>
@@ -66,6 +74,8 @@
                               <Component id="btnMostrarDOM" min="-2" pref="177" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                               <Component id="btnMostrarSAX" min="-2" pref="177" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                              <Component id="btnMostrarJAXB" min="-2" pref="177" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -79,6 +89,8 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel3" min="-2" pref="109" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="textPublicacion" min="-2" pref="171" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                                       <Component id="btnAnadir" min="-2" pref="102" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -132,13 +144,6 @@
                   <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
               </Group>
           </Group>
-          <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="644" max="32767" attributes="0"/>
-                  <Component id="textPublicacion" min="-2" pref="171" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="254" max="-2" attributes="0"/>
-              </Group>
-          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -148,6 +153,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnMostrarSAX" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                   <Component id="btnMostrarDOM" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                  <Component id="btnMostrarJAXB" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="mensajero" min="-2" pref="27" max="-2" attributes="0"/>
@@ -161,9 +167,12 @@
                           <Component id="jLabel2" pref="29" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLabel3" max="32767" attributes="0"/>
-                          <Component id="btnAnadir" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jLabel3" max="32767" attributes="0"/>
+                              <Component id="btnAnadir" min="-2" pref="44" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="textPublicacion" min="-2" pref="28" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Component id="btnGuardar" min="-2" pref="41" max="-2" attributes="0"/>
@@ -193,13 +202,6 @@
                   <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                   <Component id="textTitulo" min="-2" pref="31" max="-2" attributes="0"/>
                   <EmptySpace pref="405" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-          <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
-                  <Component id="textPublicacion" min="-2" pref="28" max="-2" attributes="0"/>
-                  <EmptySpace pref="310" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -325,6 +327,15 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMostrarSAXActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnMostrarJAXB">
+      <Properties>
+        <Property name="text" type="java.lang.String" value=" Mostrar JAXB"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMostrarJAXBActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
