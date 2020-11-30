@@ -47,6 +47,7 @@ public class JAXB {
             cadena_resultado= cadena_resultado+ "\nPublicado en: "+ libro_temp.getPublicado();
             cadena_resultado= cadena_resultado+ "\nTítulo: "+ libro_temp.getTitulo();
             cadena_resultado= cadena_resultado+ "\nAutor: "+ libro_temp.getAutor();
+            cadena_resultado= cadena_resultado+ "\nEditorial: "+ libro_temp.getEditorial();
             cadena_resultado= cadena_resultado+ "\n-------------------------------------";
             
         }

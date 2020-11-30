@@ -8,6 +8,7 @@
                         <xsd:sequence>
                             <xsd:element name="Titulo" type="xsd:string" />
                             <xsd:element name="Autor" type="xsd:string" />
+                            <xsd: element name="Editorial" type="xsd:string">
                         </xsd:sequence>
                         <xsd:attribute name="publicado" type="xsd:string" />
                     </xsd:complexType>
